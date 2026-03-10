@@ -1,14 +1,26 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Noto_Sans,
+  Roboto_Mono,
+  Atkinson_Hyperlegible,
+} from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const atkinson = Atkinson_Hyperlegible({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoSans = Noto_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const robotoMono = Roboto_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata = {
@@ -20,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${atkinson.variable} ${notoSans.variable} ${robotoMono.variable} antialiased`}
       >
         {children}
       </body>
