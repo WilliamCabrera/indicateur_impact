@@ -1,13 +1,7 @@
-import {
-  BQButton,
-  BQButtonOutlined,
-  BQButtonV1,
-} from "@/components/ui/buttons/bqbuttons";
-import { Button } from "@/components/ui/button";
+import { BQButton } from "@/components/ui/buttons/bqbuttons";
+
 import { BQContainer } from "@/components/ui/bqcontainer";
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import { borderVariants, surfaceVariants } from "@/components/variants";
+
 import {
   H1,
   H2,
@@ -30,52 +24,24 @@ export default function Home() {
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <BQButton state="active">Default</BQButton>
-          <BQButton variant="base">Base</BQButton>
-          <BQButton variant="good" state="active">
-            Good
+          <BQButton type="bad" state="active">
+            Default
           </BQButton>
-          <BQButton variant="bad">Bad</BQButton>
-          <BQButton variant="disabled">Disabled</BQButton>
-          <BQButtonOutlined type="neutral" variant="primary">
-            Neutral Primary
-          </BQButtonOutlined>
+          {/*
+          
+           <BQButton type="base">Base</BQButton>
+          <BQButton type="good">Good</BQButton>
+          <BQButton type="bad">Bad</BQButton>
+          <BQButton disabled>Disabled</BQButton>
 
-          <BQButtonOutlined type="neutral" variant="secondary">
-            Secondary
-          </BQButtonOutlined>
+          <BQContainer type="good" variant="primary">
+            Esto es un ejemplo
+          </BQContainer>
 
-          <BQButtonOutlined type="bad" variant="primary">
-            Bad Primary
-          </BQButtonOutlined>
+          <BQButton type="base">Primary Active</BQButton>
+          <BQButton disabled>Good Active</BQButton> */}
 
-          <BQButtonOutlined type="bad" variant="secondary">
-            Bad Secondary
-          </BQButtonOutlined>
-
-          <BQButtonOutlined type="good" variant="primary">
-            Good Primary
-          </BQButtonOutlined>
-
-          <BQButtonOutlined type="good" variant="secondary">
-            Good Secondary
-          </BQButtonOutlined>
-
-          <BQButtonOutlined type="good" variant="disabled">
-            Disabled
-          </BQButtonOutlined>
-
-          <BQContainer type="good" variant="primary" />
-          <BQButtonV1 variant="primary" state="active">
-            Primary Active
-          </BQButtonV1>
-          <BQButtonV1 variant="primary" state="default">
-            Primary Default
-          </BQButtonV1>
-          <BQButtonV1 variant="primary" state="disabled">
-            Primary Disabled
-          </BQButtonV1>
-          <H1 className={"text-blue-600"}>
+          {/* <H1 className={"text-blue-600"}>
             To get started, edit the page.js file.
           </H1>
           <H2>To get started, edit the page.js file.</H2>
@@ -94,7 +60,7 @@ export default function Home() {
           <TextBody3Bold>ddfjfdjfdgfd </TextBody3Bold>
           <TextBody3Italic>ddfjfdjfdgfd </TextBody3Italic>
           <TextBody4>ddfjfdjfdgfd </TextBody4>
-          <TextBody4Bold>ddfjfdjfdgfd </TextBody4Bold>
+          <TextBody4Bold>ddfjfdjfdgfd </TextBody4Bold> */}
         </div>
       </main>
     </div>

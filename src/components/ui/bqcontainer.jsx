@@ -4,12 +4,13 @@ import { borderVariants, surfaceVariants, textVariants } from "../variants";
 
 export const BQContainer = ({
   className,
-  variant = "default",
+  variant = "primary",
   size = "default",
-  state = "default",
-  type = "default",
+  state = "inactive",
+  type = "neutral",
   asChild = false,
   outlined = false,
+  children,
   ...props
 }) => {
   let args = { variant, type, size, state, className };
@@ -17,23 +18,23 @@ export const BQContainer = ({
   if (variant === "disabled") {
     args = {
       variant: "disabled",
-      type: "default",
+      type: "none",
       size,
-      state: "default",
+      state: "none",
       className,
     };
   }
   return (
     <div
-      {...props}
       className={cn(
         borderVariants({ ...args }),
         textVariants({ ...args }),
         className,
         outlined ? "" : surfaceVariants({ ...args }),
       )}
+      {...props}
     >
-      bqcontainer
+      {children}
     </div>
   );
 };

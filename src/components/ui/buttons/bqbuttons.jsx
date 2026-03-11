@@ -1,9 +1,6 @@
 import * as React from "react";
-import { cva } from "class-variance-authority";
 import { Slot } from "radix-ui";
-
 import { cn } from "@/lib/utils";
-import { buttonOutlinedVariants, buttonVariants } from "./button.variants";
 import {
   surfaceVariants,
   borderVariants,
@@ -12,81 +9,25 @@ import {
 
 function BQButton({
   className,
-  variant = "default",
+  variant = "primary",
   size = "default",
-  state = "",
-  asChild = false,
-  ...props
-}) {
-  const Comp = asChild ? Slot.Root : "button";
-
-  return (
-    <Comp
-      data-slot="button"
-      data-variant={variant}
-      data-size={size}
-      data-state={state}
-      className={cn(buttonVariants({ variant, size, state, className }))}
-      {...props}
-    />
-  );
-}
-
-function BQButtonOutlined({
-  className,
-  variant = "default",
-  size = "default",
-  state = "default",
-  type = "default",
-  asChild = false,
-  ...props
-}) {
-  const Comp = asChild ? Slot.Root : "button";
-
-  let args = { variant, type, size, state, className };
-
-  if (variant === "disabled") {
-    args = {
-      variant: "disabled",
-      type: "default",
-      size,
-      state: "default",
-      className,
-    };
-  }
-
-  return (
-    <Comp
-      data-slot="button"
-      data-variant={variant}
-      data-size={size}
-      data-state={state}
-      className={cn(buttonOutlinedVariants({ ...args }))}
-      {...props}
-    />
-  );
-}
-
-function BQButtonV1({
-  className,
-  variant = "default",
-  size = "default",
-  state = "default",
-  type = "default",
+  state = "inactive",
+  type = "neutral",
   asChild = false,
   outlined = false,
+  disabled = false,
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "button";
 
   let args = { variant, type, size, state, className };
 
-  if (variant === "disabled") {
+  if (disabled) {
     args = {
       variant: "disabled",
-      type: "default",
+      type: "none",
       size,
-      state: "default",
+      state: "none",
       className,
     };
   }
@@ -109,4 +50,4 @@ function BQButtonV1({
   );
 }
 
-export { BQButton, BQButtonOutlined, BQButtonV1, buttonVariants };
+export { BQButton };

@@ -9,7 +9,6 @@ export const surfaceVariants = cva("bg-transparent", {
       base: "",
     },
     variant: {
-      default: "",
       primary: "",
       secondary: "",
       disabled: "",
@@ -27,7 +26,7 @@ export const surfaceVariants = cva("bg-transparent", {
     {
       type: "neutral",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-neutral-primary) hover:bg-(--color-surface-neutral-primary-hover)",
     },
@@ -35,13 +34,13 @@ export const surfaceVariants = cva("bg-transparent", {
       type: "neutral",
       variant: "primary",
       state: "active",
-      class: "bg-(--color-surface-neutral-primary-active)",
+      class: "bg-(--color-surface-neutral-active)",
     },
 
     {
       type: "neutral",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-neutral-secondary) hover:bg-(--color-surface-neutral-secondary-hover)",
     },
@@ -49,14 +48,14 @@ export const surfaceVariants = cva("bg-transparent", {
       type: "neutral",
       variant: "secondary",
       state: "active",
-      class: "bg-(--color-surface-neutral-secondary-active)",
+      class: "bg-(--color-surface-neutral-active)",
     },
 
     // Base
     {
       type: "base",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-base-primary) hover:bg-(--color-surface-base-primary-hover)",
     },
@@ -70,7 +69,7 @@ export const surfaceVariants = cva("bg-transparent", {
     {
       type: "base",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-base-secondary) hover:bg-(--color-surface-base-secondary-hover)",
     },
@@ -85,7 +84,7 @@ export const surfaceVariants = cva("bg-transparent", {
     {
       type: "bad",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-bad-primary) hover:bg-(--color-surface-bad-primary-hover)",
     },
@@ -93,13 +92,13 @@ export const surfaceVariants = cva("bg-transparent", {
       type: "bad",
       variant: "primary",
       state: "active",
-      class: "bg-(--color-surface-bad-primary-active)",
+      class: "bg-(--color-surface-bad-active)",
     },
 
     {
       type: "bad",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-bad-secondary) hover:bg-(--color-surface-bad-secondary-hover)",
     },
@@ -107,14 +106,14 @@ export const surfaceVariants = cva("bg-transparent", {
       type: "bad",
       variant: "secondary",
       state: "active",
-      class: "bg-(--color-surface-bad-secondary-active)",
+      class: "bg-(--color-surface-bad-active)",
     },
 
     // Good
     {
       type: "good",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-good-primary) hover:bg-(--color-surface-good-primary-hover)",
     },
@@ -122,13 +121,13 @@ export const surfaceVariants = cva("bg-transparent", {
       type: "good",
       variant: "primary",
       state: "active",
-      class: "bg-(--color-surface-good-primary-active)",
+      class: "bg-(--color-surface-good-active)",
     },
 
     {
       type: "good",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "bg-(--color-surface-good-secondary) hover:bg-(--color-surface-good-secondary-hover)",
     },
@@ -136,19 +135,21 @@ export const surfaceVariants = cva("bg-transparent", {
       type: "good",
       variant: "secondary",
       state: "active",
-      class: "bg-(--color-surface-good-secondary-active)",
+      class: "bg-(--color-surface-good-active)",
     },
 
     //
     {
-      type: "default",
+      type: "none",
       variant: "disabled",
-      state: "default",
+      state: "none",
       class: "bg-(--color-surface-disabled)",
     },
   ],
   defaultVariants: {
-    variant: "default",
+    type: "neutral",
+    variant: "primary",
+    state: "inactive",
     size: "default",
   },
 });
@@ -161,7 +162,6 @@ export const borderVariants = cva("bg-transparent border", {
       good: "",
     },
     variant: {
-      default: "",
       primary: "",
       secondary: "",
       disabled: "",
@@ -179,7 +179,7 @@ export const borderVariants = cva("bg-transparent border", {
     {
       type: "neutral",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "border-(--color-border-neutral-primary)  hover:border-(--color-border-neutral-primary-hover)",
     },
@@ -194,7 +194,7 @@ export const borderVariants = cva("bg-transparent border", {
     {
       type: "neutral",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "border-(--color-border-neutral-secondary)  hover:border-(--color-border-neutral-secondary-hover)",
     },
@@ -210,7 +210,7 @@ export const borderVariants = cva("bg-transparent border", {
     {
       type: "bad",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "border-(--color-border-bad-primary)   hover:border-(--color-border-bad-primary-hover)",
     },
@@ -225,7 +225,7 @@ export const borderVariants = cva("bg-transparent border", {
     {
       type: "bad",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "border-(--color-border-bad-secondary)  hover:border-(--color-border-bad-secondary-hover)",
     },
@@ -241,7 +241,7 @@ export const borderVariants = cva("bg-transparent border", {
     {
       type: "good",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "border-(--color-border-good-primary)  hover:border-(--color-border-good-primary-hover)",
     },
@@ -256,7 +256,7 @@ export const borderVariants = cva("bg-transparent border", {
     {
       type: "good",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "border-(--color-border-good-secondary) hover:border-(--color-border-good-secondary-hover)",
     },
@@ -268,20 +268,20 @@ export const borderVariants = cva("bg-transparent border", {
         "border-(--color-border-good-secondary-active)  hover:border-(--color-border-good-secondary-hover)",
     },
     {
-      type: "default",
+      type: "none",
       variant: "disabled",
-      state: "default",
+      state: "none",
       class: "border-(--color-border-disabled)",
     },
   ],
   defaultVariants: {
     type: "neutral",
     variant: "primary",
-    state: "default",
+    state: "inactive",
   },
 });
 
-export const textVariants = cva({
+export const textVariants = cva("", {
   variants: {
     type: {
       neutral: "",
@@ -289,7 +289,6 @@ export const textVariants = cva({
       good: "",
     },
     variant: {
-      default: "",
       primary: "",
       secondary: "",
       disabled: "",
@@ -299,7 +298,7 @@ export const textVariants = cva({
       inactive: "",
     },
     size: {
-      default: "px-4 py-2 has-[>svg]:px-3",
+      default: "",
     },
   },
   compoundVariants: [
@@ -307,7 +306,7 @@ export const textVariants = cva({
     {
       type: "neutral",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
         "text-(--color-text-neutral-primary) hover:text-(--color-text-neutral-primary-hover)",
     },
@@ -321,7 +320,7 @@ export const textVariants = cva({
     {
       type: "neutral",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "text-(--color-text-neutral-secondary) hover:text-(--color-text-neutral-secondary-hover)",
     },
@@ -336,22 +335,21 @@ export const textVariants = cva({
     {
       type: "bad",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
-        "text-(--color-text-bad-secondary)   hover:text-(--color-text-bad-secondary-hover)",
+        "text-(--color-text-bad-primary)   hover:text-(--color-text-bad-primary-hover)",
     },
     {
       type: "bad",
       variant: "primary",
       state: "active",
-      class:
-        "text-(--color-text-bad-primary-active)   hover:text-(--color-text-bad-primary-hover)",
+      class: "text-(--color-text-bad-active)",
     },
 
     {
       type: "bad",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "text-(--color-text-bad-secondary)  hover:text-(--color-text-bad-secondary-hover)",
     },
@@ -359,30 +357,28 @@ export const textVariants = cva({
       type: "bad",
       variant: "secondary",
       state: "active",
-      class:
-        "text-(--color-text-bad-secondary-active)  hover:text-(--color-text-bad-secondary-hover)",
+      class: "text-(--color-text-bad-active)",
     },
 
     // Good
     {
       type: "good",
       variant: "primary",
-      state: "default",
+      state: "inactive",
       class:
-        "text-(--color-text-good-secondary)  hover:text-(--color-text-good-secondary-hover)",
+        "text-(--color-text-good-primary)  hover:text-(--color-text-good-primary-hover)",
     },
     {
       type: "good",
       variant: "primary",
       state: "active",
-      class:
-        "text-(--color-text-good-primary-active)  hover:text-(--color-text-good-primary-hover)",
+      class: "text-(--color-text-good-active) ",
     },
 
     {
       type: "good",
       variant: "secondary",
-      state: "default",
+      state: "inactive",
       class:
         "text-(--color-text-good-secondary)  hover:text-(--color-text-good-secondary-hover)",
     },
@@ -390,19 +386,19 @@ export const textVariants = cva({
       type: "good",
       variant: "secondary",
       state: "active",
-      class:
-        "text-(--color-text-good-secondary-active)  hover:text-(--color-text-good-secondary-hover)",
+      class: "text-(--color-text-good-active)",
     },
     {
-      type: "default",
+      type: "none",
       variant: "disabled",
-      state: "default",
+      state: "none",
       class: "text-(--color-text-disabled)",
     },
   ],
   defaultVariants: {
     type: "neutral",
     variant: "primary",
-    state: "default",
+    state: "inactive",
+    size: "default",
   },
 });

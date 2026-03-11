@@ -1,5 +1,5 @@
 import { fn } from "storybook/test";
-import { BQButton, BQButtonOutlined } from "./bqbuttons";
+import { BQButton } from "./bqbuttons";
 
 export default {
   title: "UI/BQButtons",
@@ -64,70 +64,123 @@ export const BQButtonVariants = {
   render: () => (
     <div className="p-4 max-w-2xl">
       <ButtonSpecimen
-        meta={{ variant: "default", state: "—" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="default">Default</BQButton>`}
+        meta={{ variant: "primary", state: "—" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton >Default</BQButton>`}
       >
-        <BQButton variant="default">Default</BQButton>
+        <BQButton variant="primary">Default / Variant primary</BQButton>
       </ButtonSpecimen>
 
       <ButtonSpecimen
-        meta={{ variant: "default", state: "active" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="default" state="active">Default Active</BQButton>`}
+        meta={{ variant: "secondary" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="secondary">Variant secondary</BQButton>`}
       >
-        <BQButton variant="default" state="active">Default Active</BQButton>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ variant: "base", state: "—" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="base">Base</BQButton>`}
-      >
-        <BQButton variant="base">Base</BQButton>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ variant: "good", state: "—" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="good">Good</BQButton>`}
-      >
-        <BQButton variant="good">Good</BQButton>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ variant: "good", state: "active" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="good" state="active">Good Active</BQButton>`}
-      >
-        <BQButton variant="good" state="active">Good Active</BQButton>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ variant: "bad", state: "—" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="bad">Bad</BQButton>`}
-      >
-        <BQButton variant="bad">Bad</BQButton>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ variant: "bad", state: "active" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="bad" state="active">Bad Active</BQButton>`}
-      >
-        <BQButton variant="bad" state="active">Bad Active</BQButton>
+        <BQButton variant="secondary">Variant secondary</BQButton>
       </ButtonSpecimen>
 
       <ButtonSpecimen
         meta={{ variant: "disabled", state: "—" }}
-        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton variant="disabled">Disabled</BQButton>`}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton disabled>Base</BQButton>`}
       >
-        <BQButton variant="disabled">Disabled</BQButton>
+        <BQButton disabled>Disabled</BQButton>
       </ButtonSpecimen>
     </div>
   ),
 };
 
-// ─── BQButtonOutlined ────────────────────────────────────────────────────────
-
-export const BQButtonOutlinedVariants = {
-  name: "BQButtonOutlined / Variants",
+export const BQButtonTypes = {
+  name: "BQButton / Types",
   render: () => (
     <div className="p-4 max-w-2xl">
+      <ButtonSpecimen
+        meta={{ type: "neutral", state: "—" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton >Default / Type neutral</BQButton>`}
+      >
+        <BQButton type="neutral">Default / Type neutral</BQButton>
+      </ButtonSpecimen>
+
+      <ButtonSpecimen
+        meta={{ type: "good", state: "—" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton  type="good"> Type good</BQButton>`}
+      >
+        <BQButton type="good"> Type good</BQButton>
+      </ButtonSpecimen>
+      <ButtonSpecimen
+        meta={{ type: "bad", state: "—" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton  type="bad"> Type bad</BQButton>`}
+      >
+        <BQButton type="bad"> Type bad</BQButton>
+      </ButtonSpecimen>
+      <ButtonSpecimen
+        meta={{ type: "base", state: "—" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton  type="base"> Type base</BQButton>`}
+      >
+        <BQButton type="base"> Type base</BQButton>
+      </ButtonSpecimen>
+    </div>
+  ),
+};
+
+export const BQButtonState = {
+  name: "BQButton / State",
+  render: () => (
+    <div className="p-4 max-w-2xl">
+      <ButtonSpecimen
+        meta={{ type: "neutral", state: "active" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton >Default / Type neutral</BQButton>;\n\n<BQButton state="active" >Default / Type neutral</BQButton>`}
+      >
+        <div className="flex gap-2">
+          <BQButton type="neutral">Default / Type neutral</BQButton>
+          <BQButton type="neutral" state="active">
+            Default / Type neutral
+          </BQButton>
+        </div>
+      </ButtonSpecimen>
+
+      <ButtonSpecimen
+        meta={{ type: "good", state: "active" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton  type="good"> Type good</BQButton>; \n\n<BQButton  type="good" state="active" > Type good</BQButton>`}
+      >
+        <div className="flex gap-2">
+          <BQButton type="good">Type good</BQButton>
+          <BQButton type="good" state="active">
+            Type good
+          </BQButton>
+        </div>
+      </ButtonSpecimen>
+      <ButtonSpecimen
+        meta={{ type: "bad", state: "active" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton  type="bad"> Type bad</BQButton> ;\n\n<BQButton  type="bad" state="active"> Type bad</BQButton> `}
+      >
+        <div className="flex gap-2">
+          <BQButton type="bad">Type bad</BQButton>
+          <BQButton type="bad" state="active">
+            Type bad
+          </BQButton>
+        </div>
+      </ButtonSpecimen>
+      <ButtonSpecimen
+        meta={{ type: "base", state: "—" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton  type="base"> Type base</BQButton>`}
+      >
+        <BQButton type="base"> Type base</BQButton>
+      </ButtonSpecimen>
+    </div>
+  ),
+};
+
+// ─── BQButton outlined ────────────────────────────────────────────────────────
+
+export const BQButtonOutlinedVariants = {
+  name: "BQButton / Outlined",
+  render: () => (
+    <div className="p-4 max-w-2xl">
+      <p className="font-bold"> IMPORTANT!!!!</p>
+      <p className="">
+        {" "}
+        When setting the prop outlined you might need to set the color any text
+        inside (children). Since if not it could match with the background and
+        the user will not see it.{" "}
+      </p>
       <p
         style={{
           fontFamily: "monospace",
@@ -142,39 +195,17 @@ export const BQButtonOutlinedVariants = {
       </p>
 
       <ButtonSpecimen
-        meta={{ type: "neutral", variant: "primary", state: "default" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="neutral" variant="primary">Neutral Primary</BQButtonOutlined>`}
+        meta={{
+          outlined: "true",
+          type: "neutral",
+          variant: "primary",
+          state: "",
+        }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton outlined type="neutral" variant="primary">Default/ Neutral Primary</BQButton>`}
       >
-        <BQButtonOutlined type="neutral" variant="primary" state="default">
-          Neutral Primary
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "neutral", variant: "primary", state: "active" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="neutral" variant="primary" state="active">Neutral Primary Active</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="neutral" variant="primary" state="active">
-          Neutral Primary Active
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "neutral", variant: "secondary", state: "default" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="neutral" variant="secondary">Neutral Secondary</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="neutral" variant="secondary" state="default">
-          Neutral Secondary
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "neutral", variant: "secondary", state: "active" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="neutral" variant="secondary" state="active">Neutral Secondary Active</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="neutral" variant="secondary" state="active">
-          Neutral Secondary Active
-        </BQButtonOutlined>
+        <BQButton outlined type="neutral" variant="primary">
+          Default /Neutral Primary
+        </BQButton>
       </ButtonSpecimen>
 
       <p
@@ -191,39 +222,23 @@ export const BQButtonOutlinedVariants = {
       </p>
 
       <ButtonSpecimen
-        meta={{ type: "bad", variant: "primary", state: "default" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="bad" variant="primary">Bad Primary</BQButtonOutlined>`}
+        meta={{
+          outlined: "true",
+          type: "bad",
+          variant: "primary",
+          state: "",
+        }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";
+          \n\n<BQButton outlined type="bad" variant="primary" state="active" className={"text-(--color-text-bad-active)">Bad Primary Active</BQButton>`}
       >
-        <BQButtonOutlined type="bad" variant="primary" state="default">
+        <BQButton
+          outlined
+          type="bad"
+          variant="primary"
+          className={"text-(--color-text-bad-active)"}
+        >
           Bad Primary
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "bad", variant: "primary", state: "active" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="bad" variant="primary" state="active">Bad Primary Active</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="bad" variant="primary" state="active">
-          Bad Primary Active
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "bad", variant: "secondary", state: "default" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="bad" variant="secondary">Bad Secondary</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="bad" variant="secondary" state="default">
-          Bad Secondary
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "bad", variant: "secondary", state: "active" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="bad" variant="secondary" state="active">Bad Secondary Active</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="bad" variant="secondary" state="active">
-          Bad Secondary Active
-        </BQButtonOutlined>
+        </BQButton>
       </ButtonSpecimen>
 
       <p
@@ -240,39 +255,23 @@ export const BQButtonOutlinedVariants = {
       </p>
 
       <ButtonSpecimen
-        meta={{ type: "good", variant: "primary", state: "default" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="good" variant="primary">Good Primary</BQButtonOutlined>`}
+        meta={{
+          outlined: "true",
+          type: "good",
+          variant: "primary",
+          state: "",
+        }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";
+          \n\n<BQButton outlined type="good" variant="primary" state="active" className={"text-(--color-text-good-active)">Good Primary Active</BQButton>`}
       >
-        <BQButtonOutlined type="good" variant="primary" state="default">
+        <BQButton
+          outlined
+          type="good"
+          variant="primary"
+          className={"text-(--color-text-good-active)"}
+        >
           Good Primary
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "good", variant: "primary", state: "active" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="good" variant="primary" state="active">Good Primary Active</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="good" variant="primary" state="active">
-          Good Primary Active
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "good", variant: "secondary", state: "default" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="good" variant="secondary">Good Secondary</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="good" variant="secondary" state="default">
-          Good Secondary
-        </BQButtonOutlined>
-      </ButtonSpecimen>
-
-      <ButtonSpecimen
-        meta={{ type: "good", variant: "secondary", state: "active" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined type="good" variant="secondary" state="active">Good Secondary Active</BQButtonOutlined>`}
-      >
-        <BQButtonOutlined type="good" variant="secondary" state="active">
-          Good Secondary Active
-        </BQButtonOutlined>
+        </BQButton>
       </ButtonSpecimen>
 
       <p
@@ -289,164 +288,15 @@ export const BQButtonOutlinedVariants = {
       </p>
 
       <ButtonSpecimen
-        meta={{ variant: "disabled" }}
-        code={`import { BQButtonOutlined } from "@/components/ui/buttons/bqbuttons";\n\n<BQButtonOutlined variant="disabled">Disabled</BQButtonOutlined>`}
+        meta={{ outlined: "true", disabled: "true" }}
+        code={`import { BQButton } from "@/components/ui/buttons/bqbuttons";\n\n<BQButton outlined disabled>Disabled</BQButton>`}
       >
-        <BQButtonOutlined variant="disabled">Disabled</BQButtonOutlined>
+        <BQButton outlined disabled>
+          Disabled
+        </BQButton>
       </ButtonSpecimen>
     </div>
   ),
 };
 
 // ─── Showcase completo ────────────────────────────────────────────────────────
-
-export const AllBQButtons = {
-  name: "All BQButtons",
-  render: () => (
-    <div className="p-4 max-w-2xl flex flex-col gap-8">
-      <div>
-        <p
-          style={{
-            fontFamily: "monospace",
-            fontSize: "11px",
-            color: "var(--color-neutral-300)",
-            marginBottom: "4px",
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-          }}
-        >
-          BQButton
-        </p>
-
-        <ButtonSpecimen
-          meta={{ variant: "default", state: "—" }}
-          code={`<BQButton variant="default">Default</BQButton>`}
-        >
-          <BQButton variant="default">Default</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "default", state: "active" }}
-          code={`<BQButton variant="default" state="active">Default Active</BQButton>`}
-        >
-          <BQButton variant="default" state="active">Default Active</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "base", state: "—" }}
-          code={`<BQButton variant="base">Base</BQButton>`}
-        >
-          <BQButton variant="base">Base</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "good", state: "—" }}
-          code={`<BQButton variant="good">Good</BQButton>`}
-        >
-          <BQButton variant="good">Good</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "good", state: "active" }}
-          code={`<BQButton variant="good" state="active">Good Active</BQButton>`}
-        >
-          <BQButton variant="good" state="active">Good Active</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "bad", state: "—" }}
-          code={`<BQButton variant="bad">Bad</BQButton>`}
-        >
-          <BQButton variant="bad">Bad</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "bad", state: "active" }}
-          code={`<BQButton variant="bad" state="active">Bad Active</BQButton>`}
-        >
-          <BQButton variant="bad" state="active">Bad Active</BQButton>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "disabled" }}
-          code={`<BQButton variant="disabled">Disabled</BQButton>`}
-        >
-          <BQButton variant="disabled">Disabled</BQButton>
-        </ButtonSpecimen>
-      </div>
-
-      <hr />
-
-      <div>
-        <p
-          style={{
-            fontFamily: "monospace",
-            fontSize: "11px",
-            color: "var(--color-neutral-300)",
-            marginBottom: "4px",
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-          }}
-        >
-          BQButtonOutlined
-        </p>
-
-        <ButtonSpecimen
-          meta={{ type: "neutral", variant: "primary", state: "default" }}
-          code={`<BQButtonOutlined type="neutral" variant="primary">Neutral Primary</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="neutral" variant="primary">Neutral Primary</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ type: "neutral", variant: "primary", state: "active" }}
-          code={`<BQButtonOutlined type="neutral" variant="primary" state="active">Neutral Primary Active</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="neutral" variant="primary" state="active">Neutral Primary Active</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ type: "neutral", variant: "secondary", state: "default" }}
-          code={`<BQButtonOutlined type="neutral" variant="secondary">Neutral Secondary</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="neutral" variant="secondary">Neutral Secondary</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ type: "bad", variant: "primary", state: "default" }}
-          code={`<BQButtonOutlined type="bad" variant="primary">Bad Primary</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="bad" variant="primary">Bad Primary</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ type: "bad", variant: "secondary", state: "active" }}
-          code={`<BQButtonOutlined type="bad" variant="secondary" state="active">Bad Secondary Active</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="bad" variant="secondary" state="active">Bad Secondary Active</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ type: "good", variant: "primary", state: "default" }}
-          code={`<BQButtonOutlined type="good" variant="primary">Good Primary</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="good" variant="primary">Good Primary</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ type: "good", variant: "secondary", state: "active" }}
-          code={`<BQButtonOutlined type="good" variant="secondary" state="active">Good Secondary Active</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined type="good" variant="secondary" state="active">Good Secondary Active</BQButtonOutlined>
-        </ButtonSpecimen>
-
-        <ButtonSpecimen
-          meta={{ variant: "disabled" }}
-          code={`<BQButtonOutlined variant="disabled">Disabled</BQButtonOutlined>`}
-        >
-          <BQButtonOutlined variant="disabled">Disabled</BQButtonOutlined>
-        </ButtonSpecimen>
-      </div>
-    </div>
-  ),
-};
