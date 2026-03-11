@@ -1,0 +1,57 @@
+<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M4 0.25H21C23.0711 0.25 24.75 1.92893 24.75 4V21C24.75 23.0711 23.0711 24.75 21 24.75H4C1.92893 24.75 0.25 23.0711 0.25 21V4C0.25 1.92893 1.92893 0.25 4 0.25Z" fill="url(#pattern0_1181_7209)" stroke="#000047" stroke-width="0.5"/>
+<defs>
+<pattern id="pattern0_1181_7209" patternUnits="userSpaceOnUse" patternTransform="matrix(169 0 0 169 -72 -72)" preserveAspectRatio="none" viewBox="0 0 338 338" width="1" height="1">
+<g id="pattern0_1181_7209_inner">
+<rect width="2" height="2" fill="#666691"/>
+<rect y="56" width="2" height="2" fill="#666691"/>
+<rect y="112" width="2" height="2" fill="#666691"/>
+<rect y="168" width="2" height="2" fill="#666691"/>
+<rect y="224" width="2" height="2" fill="#666691"/>
+<rect y="280" width="2" height="2" fill="#666691"/>
+<rect y="336" width="2" height="2" fill="#666691"/>
+<rect x="56" width="2" height="2" fill="#666691"/>
+<rect x="56" y="56" width="2" height="2" fill="#666691"/>
+<rect x="56" y="112" width="2" height="2" fill="#666691"/>
+<rect x="56" y="168" width="2" height="2" fill="#666691"/>
+<rect x="56" y="224" width="2" height="2" fill="#666691"/>
+<rect x="56" y="280" width="2" height="2" fill="#666691"/>
+<rect x="56" y="336" width="2" height="2" fill="#666691"/>
+<rect x="112" width="2" height="2" fill="#666691"/>
+<rect x="112" y="56" width="2" height="2" fill="#666691"/>
+<rect x="112" y="112" width="2" height="2" fill="#666691"/>
+<rect x="112" y="168" width="2" height="2" fill="#666691"/>
+<rect x="112" y="224" width="2" height="2" fill="#666691"/>
+<rect x="112" y="280" width="2" height="2" fill="#666691"/>
+<rect x="112" y="336" width="2" height="2" fill="#666691"/>
+<rect x="168" width="2" height="2" fill="#666691"/>
+<rect x="168" y="56" width="2" height="2" fill="#666691"/>
+<rect x="168" y="112" width="2" height="2" fill="#666691"/>
+<rect x="168" y="168" width="2" height="2" fill="#666691"/>
+<rect x="168" y="224" width="2" height="2" fill="#666691"/>
+<rect x="168" y="280" width="2" height="2" fill="#666691"/>
+<rect x="168" y="336" width="2" height="2" fill="#666691"/>
+<rect x="224" width="2" height="2" fill="#666691"/>
+<rect x="224" y="56" width="2" height="2" fill="#666691"/>
+<rect x="224" y="112" width="2" height="2" fill="#666691"/>
+<rect x="224" y="168" width="2" height="2" fill="#666691"/>
+<rect x="224" y="224" width="2" height="2" fill="#666691"/>
+<rect x="224" y="280" width="2" height="2" fill="#666691"/>
+<rect x="224" y="336" width="2" height="2" fill="#666691"/>
+<rect x="280" width="2" height="2" fill="#666691"/>
+<rect x="280" y="56" width="2" height="2" fill="#666691"/>
+<rect x="280" y="112" width="2" height="2" fill="#666691"/>
+<rect x="280" y="168" width="2" height="2" fill="#666691"/>
+<rect x="280" y="224" width="2" height="2" fill="#666691"/>
+<rect x="280" y="280" width="2" height="2" fill="#666691"/>
+<rect x="280" y="336" width="2" height="2" fill="#666691"/>
+<rect x="336" width="2" height="2" fill="#666691"/>
+<rect x="336" y="56" width="2" height="2" fill="#666691"/>
+<rect x="336" y="112" width="2" height="2" fill="#666691"/>
+<rect x="336" y="168" width="2" height="2" fill="#666691"/>
+<rect x="336" y="224" width="2" height="2" fill="#666691"/>
+<rect x="336" y="280" width="2" height="2" fill="#666691"/>
+<rect x="336" y="336" width="2" height="2" fill="#666691"/>
+</g>
+</pattern></defs>
+</svg>
