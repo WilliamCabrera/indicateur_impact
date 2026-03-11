@@ -288,6 +288,7 @@
   --space-25: 1px;
   --space-50: 2px;
   --space-100: 4px;
+  --space-150: 6px;
   --space-200: 8px;
   --space-300: 12px;
   --space-500: 20px;
@@ -431,7 +432,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-(--color-surface-base-primary) text-foreground;
   }
 }
 
