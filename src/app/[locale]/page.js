@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <div className="flex min-h-screen items-center justify-center ">
-      <main className="flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-center border ">
+      <main className="flex min-h-screen w-full max-w-[1440px] flex-col items-center justify-center  ">
         <div className="flex flex-col items-center gap-6 justify-center w-full">
           <BQButton type="good" className={"w-139.5 px-(--p-sm) py-(--p-xm)"}>
             <H4Regular>{t("createAccount")}</H4Regular>
