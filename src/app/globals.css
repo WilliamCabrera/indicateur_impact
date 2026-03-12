@@ -292,9 +292,11 @@
   --space-200: 8px;
   --space-300: 12px;
   --space-500: 20px;
+  --space-600: 24px;
   --space-700: 28px;
   --space-800: 32px;
   --space-1000: 40px;
+  --space-1100: 64px;
 
   /* =========================================
      2️⃣ SEMANTIC PADDING
@@ -352,6 +354,21 @@
   --line-height-body-2: 1.25rem;
   --line-height-body-3: 1.125rem;
   --line-height-body-4: 1rem;
+
+  /* --- spacing --- */
+  --space-0: 0px;
+  --space-25: 1px;
+  --space-50: 2px;
+  --space-100: 4px;
+  --space-150: 6px;
+  --space-200: 8px;
+  --space-300: 12px;
+  --space-500: 20px;
+  --space-600: 24px;
+  --space-700: 28px;
+  --space-800: 32px;
+  --space-1000: 40px;
+  --space-1100: 64px;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
