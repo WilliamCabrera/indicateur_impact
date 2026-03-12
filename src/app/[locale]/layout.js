@@ -1,7 +1,13 @@
-import { Noto_Sans, Roboto_Mono, Atkinson_Hyperlegible } from "next/font/google";
+import {
+  Noto_Sans,
+  Roboto_Mono,
+  Atkinson_Hyperlegible,
+} from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "../globals.css";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 const atkinson = Atkinson_Hyperlegible({
   variable: "--font-heading",
@@ -33,10 +39,12 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body
-        className={`${atkinson.variable} ${notoSans.variable} ${robotoMono.variable} antialiased`}
+        className={`${atkinson.variable} ${notoSans.variable} ${robotoMono.variable} antialiased flex flex-col min-h-screen max-w-360 mx-auto`}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Header />
+          <main className="flex-1 "> {children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
