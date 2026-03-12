@@ -7,10 +7,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { LANGUAGES } from "@/lib/utils";
+import { Link, usePathname } from "@/i18n/navigation";
 
 export const LanguageSwitcher = () => {
   const params = useParams();
   const { locale } = params;
+  const pathname = usePathname();
   const locales = LANGUAGES;
 
   return (
@@ -23,9 +25,13 @@ export const LanguageSwitcher = () => {
           {locales.map((loc) => {
             return loc === locale ? null : (
               <li key={loc}>
-                <a href={`/${loc}`} className="cursor-pointer capitalize">
+                <Link
+                  href={pathname}
+                  locale={loc}
+                  className="cursor-pointer capitalize"
+                >
                   {loc}
-                </a>
+                </Link>
               </li>
             );
           })}
