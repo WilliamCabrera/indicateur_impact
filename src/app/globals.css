@@ -1,26 +1,568 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* =========================================
+     0️⃣ DESIGN TOKENS 
+      shadcn ui
+  ========================================= */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* ========================================= Custom setup ========================================= */
+
+  /* --- Tipografía --- */
+  --font-heading: "Atkinson Hyperlegible", sans-serif;
+  --font-body: "Noto Sans", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+
+  /* =========================================
+     1️⃣ COLOR TOKENS (Raw scale)
+  =========================================*/
+
+  /* neutral */
+  --color-neutral-25: #f2f2f6;
+  --color-neutral-50: #e5e5ed;
+  --color-neutral-100: #ccccda;
+  --color-neutral-200: #9999b5;
+  --color-neutral-300: #666691;
+  --color-neutral-400: #33336c;
+  --color-neutral-500: #000047; /* default */
+  --color-neutral-600: #000024;
+  --color-neutral-700: #000010;
+
+  /* base */
+  --color-base-50: #fffffd;
+  --color-base-100: #fffffb;
+  --color-base-200: #fffff7;
+  --color-base-300: #fffff3;
+  --color-base-400: #ffffef;
+  --color-base-500: #ffffeb; /* default */
+  --color-base-550: #e5e5d3;
+  --color-base-600: #ccccbc;
+  --color-base-650: #b2b2a4;
+
+  /* good */
+  --color-good-50: #e5f7ed;
+  --color-good-100: #ccf0dc;
+  --color-good-200: #99e1b8;
+  --color-good-300: #66d195;
+  --color-good-400: #33c271;
+  --color-good-500: #00b34e; /* default */
+  --color-good-600: #008f3e;
+  --color-good-700: #006b2f;
+  --color-good-800: #00481f;
+
+  /* bad */
+  --color-bad-50: #fff6ed;
+  --color-bad-100: #ffeedc;
+  --color-bad-200: #ffddb9;
+  --color-bad-300: #ffcc96;
+  --color-bad-400: #ffbb73;
+  --color-bad-500: #ffaa50; /* default */
+  --color-bad-600: #cc8840;
+  --color-bad-700: #996630;
+  --color-bad-800: #664420;
+
+  /* category1 */
+  --color-category1-50: #f4ecfc;
+  --color-category1-100: #e8d9fa;
+  --color-category1-200: #d2b2f4;
+  --color-category1-300: #bb8cef;
+  --color-category1-400: #a565e9;
+  --color-category1-500: #8e3fe4; /* default */
+  --color-category1-600: #7232b6;
+  --color-category1-700: #552689;
+  --color-category1-800: #39195b;
+
+  /* category2 */
+  --color-category2-50: #fefef2;
+  --color-category2-100: #fefee5;
+  --color-category2-200: #fdfdcb;
+  --color-category2-300: #fcfcb1;
+  --color-category2-400: #fbfb97;
+  --color-category2-500: #fafa7d; /* default */
+  --color-category2-600: #c8c864;
+  --color-category2-700: #96964b;
+  --color-category2-800: #646432;
+
+  /* category3 */
+  --color-category3-50: #eff4ff;
+  --color-category3-100: #e0e9ff;
+  --color-category3-200: #c1d2ff;
+  --color-category3-300: #a1bcff;
+  --color-category3-400: #82a5ff;
+  --color-category3-500: #638fff; /* default */
+  --color-category3-600: #4f72cc;
+  --color-category3-700: #3b5699;
+  --color-category3-800: #283966;
+
+  /* =========================================
+     2️⃣ SEMANTIC TEXT COLORS
+  ========================================= */
+
+  /*text neutral */
+  --color-text-neutral-primary: var(--color-neutral-500);
+  --color-text-neutral-primary-hover: var(--color-neutral-400);
+  --color-text-neutral-secondary: var(--color-neutral-300);
+  --color-text-neutral-secondary-hover: var(--color-neutral-200);
+  --color-text-neutral-active: var(--color-base-500);
+
+  /*text good */
+  --color-text-good-primary: var(--color-base-500);
+  --color-text-good-primary-hover: var(--color-base-500);
+  --color-text-good-secondary: var(--color-good-600);
+  --color-text-good-secondary-hover: var(--color-good-700);
+  --color-text-good-active: var(--color-good-800);
+
+  /*text bad */
+  --color-text-bad-primary: var(--color-base-500);
+  --color-text-bad-primary-hover: var(--color-base-500);
+  --color-text-bad-secondary: var(--color-bad-600);
+  --color-text-bad-secondary-hover: var(--color-bad-700);
+  --color-text-bad-active: var(--color-bad-800);
+
+  --color-text-disabled: var(--color-neutral-200);
+
+  /* =========================================
+     2️⃣ SEMANTIC ICON COLORS
+  ========================================= */
+
+  /*icon neutral */
+  --color-icon-neutral-primary: var(--color-neutral-500);
+  --color-icon-neutral-primary-hover: var(--color-neutral-400);
+  --color-icon-neutral-secondary: var(--color-neutral-300);
+  --color-icon-neutral-secondary-hover: var(--color-neutral-200);
+  --color-icon-neutral-active: var(--color-base-500);
+
+  --color-icon-disabled: var(--color-neutral-200);
+
+  /* =========================================
+     2️⃣ SEMANTIC SURFACE COLORS
+  ========================================= */
+
+  /*surface neutral */
+  --color-surface-neutral-primary: var(--color-neutral-50);
+  --color-surface-neutral-primary-hover: var(--color-neutral-100);
+  --color-surface-neutral-secondary: var(--color-neutral-25);
+  --color-surface-neutral-secondary-hover: var(--color-neutral-50);
+  --color-surface-neutral-active: var(--color-neutral-500);
+
+  /*surface base */
+  --color-surface-base-primary: var(--color-base-500);
+  --color-surface-base-primary-hover: var(--color-base-550);
+  --color-surface-base-secondary: var(--color-base-200);
+  --color-surface-base-secondary-hover: var(--color-base-400);
+
+  /*surface good */
+  --color-surface-good-primary: var(--color-good-500);
+  --color-surface-good-primary-hover: var(--color-good-600);
+  --color-surface-good-secondary: var(--color-good-100);
+  --color-surface-good-secondary-hover: var(--color-good-200);
+  --color-surface-good-active: var(--color-good-700);
+
+  /*surface bad */
+  --color-surface-bad-primary: var(--color-bad-500);
+  --color-surface-bad-primary-hover: var(--color-bad-600);
+  --color-surface-bad-secondary: var(--color-bad-100);
+  --color-surface-bad-secondary-hover: var(--color-bad-200);
+  --color-surface-bad-active: var(--color-bad-700);
+
+  --color-surface-disabled: var(--color-neutral-50);
+
+  /* =========================================
+     2️⃣ SEMANTIC BORDER COLORS
+  ========================================= */
+
+  /*border neutral */
+  --color-border-neutral-primary: var(--color-neutral-500);
+  --color-border-neutral-primary-hover: var(--color-neutral-500);
+  --color-border-neutral-primary-active: var(--color-neutral-500);
+  --color-border-neutral-secondary: var(--color-neutral-100);
+  --color-border-neutral-secondary-hover: var(--color-neutral-200);
+  --color-border-neutral-secondary-active: var(--color-neutral-700);
+
+  /*border good */
+  --color-border-good-primary: var(--color-good-500);
+  --color-border-good-primary-hover: var(--color-good-600);
+  --color-border-good-primary-active: var(--color-good-500);
+  --color-border-good-secondary: var(--color-good-600);
+  --color-border-good-secondary-hover: var(--color-good-700);
+  --color-border-good-secondary-active: var(--color-good-800);
+
+  /*border bad */
+  --color-border-bad-primary: var(--color-bad-500);
+  --color-border-bad-primary-hover: var(--color-bad-600);
+  --color-border-bad-primary-active: var(--color-good-500);
+  --color-border-bad-secondary: var(--color-bad-600);
+  --color-border-bad-secondary-hover: var(--color-bad-700);
+  --color-border-bad-secondary-active: var(--color-bad-800);
+
+  --color-border-disabled: var(--color-neutral-200);
+
+  /*=========================================
+     2️⃣ Typography
+  =========================================*/
+  --font-heading: "Atkinson Hyperlegible", sans-serif;
+  --font-body: "Noto Sans", sans-serif;
+
+  /* --- font size --- */
+  --font-size-h1: 3rem; /* 48px */
+  --font-size-h2: 2.5rem; /* 40px */
+  --font-size-h3: 2rem; /* 32px */
+  --font-size-h4: 1.5rem; /* 24px */
+  --font-size-h5: 1.25rem; /* 20px */
+  --font-size-body-1: 1.25rem; /* 20px */
+  --font-size-body-2: 1rem; /* 16px */
+  --font-size-body-3: 0.875rem; /* 14px */
+  --font-size-body-4: 0.75rem; /* 12px */
+
+  /* --- Line heights --- */
+  --line-height-h1: 3.25rem; /* 52px */
+  --line-height-h2: 2.75rem; /* 44px */
+  --line-height-h3: 2.125rem; /* 34px */
+  --line-height-h4: 1.625rem; /* 26px */
+  --line-height-h5: 1.375rem; /* 22px */
+  --line-height-body-1: 1.5rem; /* 24px */
+  --line-height-body-2: 1.25rem; /* 20px */
+  --line-height-body-3: 1.125rem; /* 18px */
+  --line-height-body-4: 1rem; /* 16px */
+
+  --text-h1-spacing: 2.5rem; /* 40px */
+  --text-h2-spacing: 2rem; /* 32px */
+  --text-h3-spacing: 1.5rem; /* 24px */
+  --text-h4-spacing: 1.25rem; /* 20px */
+  --text-h5-spacing: 1.25rem; /* 20px */
+
+  --text-body1-spacing: 1.25rem; /* 20px */
+  --text-body2-spacing: 1rem; /* 16px */
+  --text-body3-spacing: 0.875rem; /* 14px */
+  --text-body4-spacing: 0.75rem; /* 12px */
+
+  /* =========================================
+     1️⃣ SPACING SCALE (Raw scale)
+  ========================================= */
+
+  --space-0: 0px;
+  --space-25: 1px;
+  --space-50: 2px;
+  --space-100: 4px;
+  --space-150: 6px;
+  --space-200: 8px;
+  --space-300: 12px;
+  --space-500: 20px;
+  --space-700: 28px;
+  --space-800: 32px;
+  --space-1000: 40px;
+
+  /* =========================================
+     2️⃣ SEMANTIC PADDING
+  ========================================= */
+
+  --p-none: var(--space-0);
+  --p-xxm: var(--space-100);
+  --p-xm: var(--space-200);
+  --p-sm: var(--space-500);
+  --p-md: var(--space-700);
+  --p-lg: var(--space-800);
+
+  /* =========================================
+     3️⃣ BORDER WIDTH
+     (independiente del spacing)
+  ========================================= */
+
+  --border-width-none: var(--space-0);
+  --border-width-sm: var(--space-25);
+  --border-width-md: var(--space-50);
+  --border-width-lg: var(--space-100);
+
+  /* =========================================
+     4️⃣ BORDER RADIUS
+  ========================================= */
+
+  --radius-none: 0px;
+  --radius-xm: var(--space-100);
+  --radius-sm: var(--space-200);
+  --radius-md: var(--space-300);
+  --radius-lg: var(--space-500);
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* this var are defined in root as well to able to use directly in the html as var(--variable)*/
+  /* --- font size --- */
+  --font-size-h1: 3rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-h4: 1.5rem;
+  --font-size-h5: 1.25rem;
+  --font-size-body-1: 1.25rem;
+  --font-size-body-2: 1rem;
+  --font-size-body-3: 0.875rem;
+  --font-size-body-4: 0.75rem;
+
+  /* --- Line heights --- */
+  --line-height-h1: 3.25rem;
+  --line-height-h2: 2.75rem;
+  --line-height-h3: 2.125rem;
+  --line-height-h4: 1.625rem;
+  --line-height-h5: 1.375rem;
+  --line-height-body-1: 1.5rem;
+  --line-height-body-2: 1.25rem;
+  --line-height-body-3: 1.125rem;
+  --line-height-body-4: 1rem;
+
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* =========================================
+     0️⃣ DESIGN TOKENS 
+      shadcn ui
+  ========================================= */
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+
+  /* ========================================= Custom setup ========================================= */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-(--color-surface-base-primary) text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .t-h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    font-weight: 700;
+    /* margin-bottom: var(--text-h1-spacing); */
+  }
+
+  .t-h2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    font-weight: 700;
+    /* margin-bottom: var(--text-h2-spacing); */
+  }
+
+  .t-h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    font-weight: 700;
+    /* margin-bottom: var(--text-h3-spacing); */
+  }
+
+  .t-h4 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h4);
+    line-height: var(--line-height-h4);
+    /* margin-bottom: var(--text-h4-spacing); */
+  }
+
+  .t-h5 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-h5);
+
+    /* margin-bottom: var(--text-h5-spacing); */
+  }
+
+  .t-body-1 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-1);
+    line-height: var(--line-height-body-1);
+    /* margin-bottom: var(--text-body1-spacing); */
+  }
+
+  .t-body-2 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-2);
+    line-height: var(--line-height-body-2);
+    /* margin-bottom: var(--text-body2-spacing); */
+  }
+
+  .t-body-3 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-3);
+    line-height: var(--line-height-body-3);
+    /* margin-bottom: var(--text-body3-spacing); */
+  }
+
+  .t-body-4 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-4);
+    line-height: var(--line-height-body-4);
+    /* margin-bottom: var(--text-body4-spacing); */
+  }
+
+  /* Padding */
+  .p-bq-xxm {
+    padding: var(--space-100);
+  }
+  .p-bq-xm {
+    padding: var(--space-200);
+  }
+  .p-bq-sm {
+    padding: var(--space-500);
+  }
+  .p-bq-md {
+    padding: var(--space-700);
+  }
+  .p-bq-lg {
+    padding: var(--space-800);
+  }
+
+  /* Pbq-adding X */
+  .px-bq-sm {
+    padding-left: var(--space-500);
+    padding-right: var(--space-500);
+  }
+  .px-bq-md {
+    padding-left: var(--space-700);
+    padding-right: var(--space-700);
+  }
+
+  /* Pbq-adding Y */
+  .py-bq-sm {
+    padding-top: var(--space-500);
+    padding-bottom: var(--space-500);
+  }
+  .py-bq-md {
+    padding-top: var(--space-700);
+    padding-bottom: var(--space-700);
+  }
+
+  /* Border width */
+  .border-sm {
+    border-width: var(--border-sm);
+  }
+  .border-md {
+    border-width: var(--border-md);
+  }
+  .border-lg {
+    border-width: var(--border-lg);
+  }
+
+  /* Radius */
+  .rounded-bq-sm {
+    border-radius: var(--radius-sm);
+  }
+  .rounded-bq-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-bq-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-bq-full {
+    border-radius: var(--radius-full);
+  }
 }
