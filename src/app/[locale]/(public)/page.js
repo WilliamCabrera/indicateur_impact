@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getPageTranslations } from "@/i18n/getPageTranslations";
 import { BQButton } from "@/components/ui/buttons/bqbuttons";
 import { H4Bold, H4Regular } from "@/components/ui/typography";
 import { BQCard } from "@/components/ui/bqcard";
@@ -8,7 +8,7 @@ import { ShapeFlower } from "@/components/ui/svg/shapeFlower";
 import { ShapeDuck } from "@/components/ui/svg/shapeDuck";
 
 export default async function Home() {
-  const t = await getTranslations("HomePage");
+  const t = await getPageTranslations("HomePage");
 
   return (
     <div className="flex flex-col items-center gap-22.5 justify-start w-full min-h-screen pt-33.5">
@@ -29,11 +29,11 @@ export default async function Home() {
           <p className="m-0 p-0">{t("description3")}</p>
         </div>
         <BQCard className="w-full flex items-center bg-(--color-neutral-500) gap-2.5  pb-(--space-1100) pt-(--space-1000) rounded-bq-lg">
-          <div className="flex flex-col min-w-139.5 gap-(--space-600)">
+          <form className="flex flex-col min-w-139.5 gap-(--space-600)">
             <H4Regular className={"text-(--color-text-neutral-active)"}>
               {t("loginTitle")}
             </H4Regular>
-            <div className="flex flex-col w-full gap-(--space-300)">
+            <div className="flex flex-col w-full gap-(--space-300) t-body-2">
               <BQInput placeholder={t("usernamePlaceholder")} />
               <BQInput placeholder={t("passwordPlaceholder")} />
             </div>
@@ -49,7 +49,7 @@ export default async function Home() {
             <BQButton type="good" variant={"primary"} className="w-full t-h4">
               {t("createAccount")}
             </BQButton>
-          </div>
+          </form>
         </BQCard>
       </div>
       <div className=" -black w-full h-[1072px] relative text-(--color-text-neutral-active) flex flex-col justify-end items-center pb-[120px] bg-(--color-neutral-500) ">

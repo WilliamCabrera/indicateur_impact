@@ -2,10 +2,10 @@ import { BQCard } from "@/components/ui/bqcard";
 import { BQInput } from "@/components/ui/bqinput";
 import { BQButton } from "@/components/ui/buttons/bqbuttons";
 import { H4Bold } from "@/components/ui/typography";
-import { getTranslations } from "next-intl/server";
+import { getPageTranslations } from "@/i18n/getPageTranslations";
 
 export default async function Connexion() {
-  const t = await getTranslations("HomePage");
+  const t = await getPageTranslations("ConnexionPage");
 
   return (
     <div className="flex flex-col items-center  justify-start w-full min-h-[70vh] bg-(--color-surface-base-primary)">
@@ -30,16 +30,16 @@ export default async function Connexion() {
           >
             {t("createAccount")}
           </H4Bold>
-          <div className="flex flex-col gap-(--space-300)">
-            <BQInput />
-            <BQInput />
-            <BQInput />
-            <BQInput />
-            <BQInput />
+          <form className="flex flex-col gap-(--space-300) t-body-2">
+            <BQInput placeholder={t("usernamePlaceholder")} />
+            <BQInput placeholder={t("organisationPlaceholder")} />
+            <BQInput placeholder={t("emailPlaceholder")} />
+            <BQInput placeholder={t("passwordPlaceholder")} />
+            <BQInput placeholder={t("privacyPlaceholder")} />
             <BQButton type="good" variant={"primary"} className="w-full t-h4">
               {t("createAccount")}
             </BQButton>
-          </div>
+          </form>
         </BQCard>
       </div>
     </div>
