@@ -6,8 +6,8 @@ export const BQCard = ({ className, children, ...props }) => {
   return (
     <Card
       className={cn(
-        "bg-(--color-surface-base-secondary) border shadow-lg p-5 rounded-bq-sm",
-        className,
+        "bg-(--color-surface-base-secondary) border shadow-lg p-5 rounded-(--space-200) ",
+        className
       )}
       {...props}
     >
