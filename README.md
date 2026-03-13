@@ -203,10 +203,10 @@ npm install   # runs "prepare" → git config core.hooksPath .githooks
 Scans staged `.js/.jsx/.ts/.tsx` files before each commit. If `console.log` statements are found, it offers to remove them automatically.
 
 ```text
-❌ Se encontraron console.log en los siguientes archivos:
+❌ console.log statements found in the following files:
    src/app/page.js:12:  console.log("debug")
 
-¿Querés eliminarlos automáticamente? (s/N):
+Remove them automatically? (y/N):
 ```
 
 #### `pre-push` — enforces branch naming
@@ -225,20 +225,15 @@ Blocks any push from a branch that does not follow the naming convention.
 Base branches (`main`, `staging`, `develop`) are always allowed.
 
 ```text
-❌ El nombre de rama 'my-branch' no sigue la convención de nomenclatura.
-⛔ Push cancelado. Renombrá la rama con: git branch -m <nuevo-nombre>
+❌ Branch name 'my-branch' does not follow the naming convention.
+⛔ Push cancelled. To fix it:
+
+   1. Rename the local branch:
+      git branch -m my-branch feature/<new-name>
+
+   2. If already pushed to remote, delete it there and push the renamed one:
+      git push origin --delete my-branch
+      git push -u origin feature/<new-name>
 ```
 
-If you already created a branch with an incorrect name, follow these steps:
-
-```bash
-# 1. Rename the local branch
-git branch -m old-name feature/new-name
-
-# 2. If the branch was already pushed to remote, delete it there and push the renamed one
-git push origin --delete old-name
-git push -u origin feature/new-name
-
-# 3. If you had an open PR pointing to old-name, update its base branch on GitHub
-#    (GitHub will usually ask you automatically)
-```
+> If you had an open PR pointing to the old branch name, GitHub will prompt you to update it automatically.

@@ -14,7 +14,7 @@ if [ -z "$FILES_WITH_LOGS" ]; then
 fi
 
 echo ""
-echo "❌ Se encontraron console.log en los siguientes archivos:"
+echo "❌ console.log statements found in the following files:"
 echo "$FILES_WITH_LOGS" | while read -r file; do
   grep -n "console\.log" "$file" | while read -r match; do
     echo "   $file:$match"
@@ -22,17 +22,17 @@ echo "$FILES_WITH_LOGS" | while read -r file; do
 done
 
 echo ""
-printf "¿Querés eliminarlos automáticamente? (s/N): "
+printf "Remove them automatically? (y/N): "
 read -r ANSWER < /dev/tty
 
-if [ "$ANSWER" = "s" ] || [ "$ANSWER" = "S" ]; then
+if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
   echo "$FILES_WITH_LOGS" | while read -r file; do
     sed -i '/console\.log/d' "$file"
     git add "$file"
   done
-  echo "✅ console.log eliminados y archivos re-staged. Continuando con el commit..."
+  echo "✅ console.log removed and files re-staged. Continuing with commit..."
   exit 0
 else
-  echo "⛔ Commit cancelado. Eliminá los console.log manualmente antes de commitear."
+  echo "⛔ Commit cancelled. Remove the console.log statements manually before committing."
   exit 1
 fi
