@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# post-checkout hook
+# Args: $1 = previous HEAD, $2 = new HEAD, $3 = flag (1=branch checkout, 0=file checkout)
+
+# Only run on branch checkouts (not file checkouts)
+if [ "$3" != "1" ]; then
+  exit 0
+fi
+
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+# Don't run on main itself
+if [ "$CURRENT_BRANCH" = "main" ] || [ "$CURRENT_BRANCH" = "master" ]; then
+  exit 0
+fi
+
+# Fetch silently to get latest remote state
+git fetch origin main --quiet 2>/dev/null
+
+# Check how many commits main has that are NOT in the current branch
+COMMITS_BEHIND=$(git rev-list --count HEAD..origin/main 2>/dev/null)
+
+if [ -z "$COMMITS_BEHIND" ] || [ "$COMMITS_BEHIND" = "0" ]; then
+  exit 0
+fi
+
+echo ""
+echo "⚠️  Your branch '$CURRENT_BRANCH' is $COMMITS_BEHIND commit(s) behind origin/main."
+printf "   Rebase from main now? (y/N): "
+read -r ANSWER < /dev/tty
+
+if [ "$ANSWER" = "y" ] || [ "$ANSWER" = "Y" ]; then
+  echo ""
+  git rebase origin/main
+  if [ $? -eq 0 ]; then
+    echo ""
+    echo "✅ Rebase completed successfully."
+  else
+    echo ""
+    echo "❌ Rebase failed. Resolve conflicts then run: git rebase --continue"
+  fi
+else
+  echo "   Skipped. You can rebase manually with: git rebase origin/main"
+fi
+
+echo ""
+exit 0
