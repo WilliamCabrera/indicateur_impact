@@ -185,3 +185,60 @@ git rebase main
         │                     │                           │
         │                     │                           ▼ continue working...
 ```
+
+---
+
+## Git Hooks
+
+This project includes shared git hooks in the `.githooks/` folder. They are automatically configured when you install dependencies.
+
+```bash
+npm install   # runs "prepare" → git config core.hooksPath .githooks
+```
+
+### Available hooks
+
+#### `pre-commit` — blocks `console.log`
+
+Scans staged `.js/.jsx/.ts/.tsx` files before each commit. If `console.log` statements are found, it offers to remove them automatically.
+
+```text
+❌ Se encontraron console.log en los siguientes archivos:
+   src/app/page.js:12:  console.log("debug")
+
+¿Querés eliminarlos automáticamente? (s/N):
+```
+
+#### `pre-push` — enforces branch naming
+
+Blocks any push from a branch that does not follow the naming convention.
+
+| Prefix | Use |
+| --- | --- |
+| `feature/<name>` | New functionality |
+| `fix/<name>` | Bug fix |
+| `hotfix/<name>` | Urgent production fix |
+| `chore/<name>` | Maintenance tasks |
+| `docs/<name>` | Documentation |
+| `refactor/<name>` | Refactoring |
+
+Base branches (`main`, `staging`, `develop`) are always allowed.
+
+```text
+❌ El nombre de rama 'my-branch' no sigue la convención de nomenclatura.
+⛔ Push cancelado. Renombrá la rama con: git branch -m <nuevo-nombre>
+```
+
+If you already created a branch with an incorrect name, follow these steps:
+
+```bash
+# 1. Rename the local branch
+git branch -m old-name feature/new-name
+
+# 2. If the branch was already pushed to remote, delete it there and push the renamed one
+git push origin --delete old-name
+git push -u origin feature/new-name
+
+# 3. If you had an open PR pointing to old-name, update its base branch on GitHub
+#    (GitHub will usually ask you automatically)
+```

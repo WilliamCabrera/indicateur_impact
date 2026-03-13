@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Validate branch naming convention before pushing
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+ALLOWED_PATTERN="^(main|staging|develop|feature/.+|fix/.+|hotfix/.+|chore/.+|docs/.+|refactor/.+)$"
+
+if echo "$BRANCH" | grep -qE "$ALLOWED_PATTERN"; then
+  exit 0
+fi
+
+echo ""
+echo "❌ El nombre de rama '$BRANCH' no sigue la convención de nomenclatura."
+echo ""
+echo "   Prefijos permitidos:"
+echo "     feature/<nombre>   → nueva funcionalidad"
+echo "     fix/<nombre>       → corrección de bug"
+echo "     hotfix/<nombre>    → corrección urgente en producción"
+echo "     chore/<nombre>     → tareas de mantenimiento"
+echo "     docs/<nombre>      → documentación"
+echo "     refactor/<nombre>  → refactorización"
+echo ""
+echo "   Ramas base: main, staging, develop"
+echo ""
+echo "⛔ Push cancelado. Para corregirlo:"
+echo ""
+echo "   1. Renombrá la rama local:"
+echo "      git branch -m $BRANCH feature/<nuevo-nombre>"
+echo ""
+echo "   2. Si ya la habías pusheado, eliminá la rama remota y volvé a pushear:"
+echo "      git push origin --delete $BRANCH"
+echo "      git push -u origin feature/<nuevo-nombre>"
+echo ""
+exit 1
