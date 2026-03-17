@@ -21,6 +21,13 @@
     "home": "Home",
     "login": "Login"
   },
+  "EmissionTable": {
+    "numeroCas": "CAS Number",
+    "nomSubstance": "Substance name",
+    "quantite": "Quantity",
+    "unitesRejet": "Estimated emission units",
+    "par": "per"
+  },
   "Steps": {
     "step1": "DATA ENTRY",
     "step2": "SCORE CALCULATION",

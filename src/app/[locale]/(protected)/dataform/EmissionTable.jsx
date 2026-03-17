@@ -7,6 +7,7 @@ import { BQSimpleSelect } from "@/components/ui/bqsimpleselect";
 import { BQButton } from "@/components/ui/buttons/bqbuttons";
 import { cn } from "@/lib/utils";
 import { BQTable } from "./BQTable";
+import { useTranslations } from "next-intl";
 
 const EMPTY_INPUT = {
   cas: "",
@@ -118,6 +119,7 @@ function SearchInput({ value, onChange, placeholder }) {
 }
 
 export const EmissionTable = ({ data = INITIAL_ROWS }) => {
+  const t = useTranslations("EmissionTable");
   const [rows, setRows] = useState(data);
   const [input, setInput] = useState(EMPTY_INPUT);
 
@@ -135,7 +137,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
           <div className="flex flex-col  gap-(--space-200) ">
             <div className="flex items-center gap-2">
               <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
-                Numéro CAS
+                {t("numeroCas")}
               </TextBody2>
               <img
                 src="/icons/information.svg"
@@ -164,7 +166,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
           <div className="flex flex-col  gap-(--space-200) ">
             <div className="flex items-center gap-2 ">
               <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
-                Nom de la substance
+                {t("nomSubstance")}
               </TextBody2>
               <img
                 src="/icons/information.svg"
@@ -193,7 +195,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
           return (
             <div className="flex flex-col  gap-(--space-200) w-full ">
               <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
-                Quantité
+                {t("quantite")}
               </TextBody2>
               <CellNumberInput
                 className="w-full"
@@ -223,7 +225,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
             <div className="flex flex-col  gap-(--space-200)">
               <div className="flex items-center gap-2 ">
                 <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
-                  Unités de rejet estimés
+                  {t("unitesRejet")}
                 </TextBody2>
               </div>
               <div className="flex items-center gap-2.5 w-full ">
@@ -234,7 +236,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
                   className="min-w-42.5"
                 />
                 <TextBody3 className="text-(--color-text-neutral-secondary)">
-                  par
+                  {t("par")}
                 </TextBody3>
                 <BQSimpleSelect
                   value={input.parUnite}
@@ -254,7 +256,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
                 <p className="t-body-3">unités</p>
               </div>
               <TextBody3 className="text-(--color-text-neutral-secondary)">
-                par
+                {t("par")}
               </TextBody3>
               <div className="min-w-42.5 rounded-(--space-200) p-(--space-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
                 <p className="t-body-3">unités</p>
@@ -291,7 +293,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         },
       },
     ];
-  }, [input, handleDelete]);
+  }, [input, handleDelete, t]);
 
   return <BQTable columns={dataTableColums} data={rows} />;
 };

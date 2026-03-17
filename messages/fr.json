@@ -21,6 +21,13 @@
     "home": "Accueil",
     "login": "Connexion"
   },
+  "EmissionTable": {
+    "numeroCas": "Numéro CAS",
+    "nomSubstance": "Nom de la substance",
+    "quantite": "Quantité",
+    "unitesRejet": "Unités de rejet estimés",
+    "par": "par"
+  },
   "Steps": {
     "step1": "SAISIE DES DONNÉES",
     "step2": "CALCUL DES SCORES",
