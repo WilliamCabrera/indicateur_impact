@@ -13,22 +13,22 @@ import DashboardTableSection, {
 
 export default async function Dashboard() {
   return (
-    <div className="w-full flex-1 relative pt-(--space-800) px-(--space-500) gap-2.75 flex justify-between">
+    <div className="w-full flex-1 relative pt-(--scale-800) px-(--scale-500) gap-2.75 flex justify-between">
       <img
         src="/images/homepage-bg-img.jpg"
         alt="Placeholder"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="flex flex-col gap-(--space-300) z-10">
+      <div className="flex flex-col gap-(--scale-300) z-10">
         <H4Bold> Bonjour Julianne</H4Bold>
         <BQButton type="good" variant={"primary"} className="w-full t-h4">
           {"Créer un nouveau projet"}
         </BQButton>
       </div>
-      <div className="flex flex-col z-10 gap-(--space-700) flex-1 max-w-230">
+      <div className="flex flex-col z-10 gap-(--scale-700) flex-1 max-w-230">
         <BQCard
           className={
-            "bg-(--color-surface-base-secondary)/80 rounded-(--space-500)"
+            "bg-(--color-surface-base-secondary)/80 rounded-(--scale-500)"
           }
         >
           <ProjectTable
@@ -40,7 +40,7 @@ export default async function Dashboard() {
 
         <BQCard
           className={
-            "bg-(--color-surface-base-secondary)/80 rounded-(--space-500)"
+            "bg-(--color-surface-base-secondary)/80 rounded-(--scale-500)"
           }
         >
           <ProjectTable

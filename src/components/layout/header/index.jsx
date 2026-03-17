@@ -11,7 +11,7 @@ export const Header = async () => {
         <div role="button" className="cursor-pointer">
           <img src="/icons/burger.svg" alt="" />
         </div>
-        <ul className="flex gap-(--space-1100) t-h5 ">
+        <ul className="flex gap-(--scale-1100) t-h5 ">
           <li className="cursor-pointer">{t("home")}</li>
           <li className="cursor-pointer">
             <LanguageSwitcher />

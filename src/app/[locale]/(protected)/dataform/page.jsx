@@ -31,10 +31,10 @@ export default async function DataForm() {
   ];
 
   return (
-    <div className="w-full flex-1 flex flex-col gap-(--space-800) pb-8">
+    <div className="w-full flex-1 flex flex-col gap-(--scale-800) pb-8">
       <BQCard
         className={
-          "shadow-none bg-(--color-surface-base-primary) border-(--color-border-neutral-secondary) flex flex-col gap-(--space-300) rounded-bq-lg p-bq-md"
+          "shadow-none bg-(--color-surface-base-primary) border-(--color-border-neutral-secondary) flex flex-col gap-(--scale-300) rounded-bq-lg p-bq-md"
         }
       >
         <H2 className="text-(--color-text-neutral-primary)">{t("title")}</H2>
@@ -42,7 +42,7 @@ export default async function DataForm() {
       </BQCard>
       <BQCard
         className={
-          "shadow-none bg-(--color-surface-base-primary) border-(--color-border-neutral-secondary) flex flex-col gap-(--space-1100) rounded-bq-lg p-bq-md"
+          "shadow-none bg-(--color-surface-base-primary) border-(--color-border-neutral-secondary) flex flex-col gap-(--scale-1100) rounded-bq-lg p-bq-md"
         }
       >
         <H3 className="text-(--color-text-neutral-primary)">
@@ -62,19 +62,19 @@ export default async function DataForm() {
           >
             <AccordionItem
               value="informationsGenerales"
-              className={"border-b-0 border-t mb-(--space-800)"}
+              className={"border-b-0 border-t mb-(--scale-800)"}
             >
               <AccordionTrigger>
-                <div className="flex justify-center items-center gap-(--space-400) p-(--space-400)">
+                <div className="flex justify-center items-center gap-(--scale-400) p-(--scale-400)">
                   <H4Bold className={"text-(--color-text-neutral-primary)"}>
                     {t("informationsGenerales")}
                   </H4Bold>
                   <img src="/icons/information.svg" alt="" />
                 </div>
               </AccordionTrigger>
-              <AccordionContent className={"mt-(--space-800)"}>
-                <div className="flex flex-col p-1 w-full gap-(--space-600)">
-                  <div className="w-full flex items-center gap-(--space-700)">
+              <AccordionContent className={"mt-(--scale-800)"}>
+                <div className="flex flex-col p-1 w-full gap-(--scale-600)">
+                  <div className="w-full flex items-center gap-(--scale-700)">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
                       {t("nomProjet")}
                     </TextBody2>
@@ -83,7 +83,7 @@ export default async function DataForm() {
                       className={"flex-1 t-body-2 placeholder:t-body-2"}
                     />
                   </div>
-                  <div className="w-full flex items-center gap-(--space-700)">
+                  <div className="w-full flex items-center gap-(--scale-700)">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
                       {t("nomPromoteur")}
                     </TextBody2>
@@ -92,7 +92,7 @@ export default async function DataForm() {
                       className={"flex-1 t-body-2 placeholder:t-body-2"}
                     />
                   </div>
-                  <div className="w-full flex items-center gap-(--space-700)">
+                  <div className="w-full flex items-center gap-(--scale-700)">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
                       {t("secteurActivite")}
                     </TextBody2>
@@ -107,19 +107,19 @@ export default async function DataForm() {
             </AccordionItem>
             <AccordionItem
               value="localisationProjet"
-              className={"border-b-0 border-t mb-(--space-800)"}
+              className={"border-b-0 border-t mb-(--scale-800)"}
             >
               <AccordionTrigger>
-                <div className="flex justify-center items-center gap-(--space-400) p-(--space-400)">
+                <div className="flex justify-center items-center gap-(--scale-400) p-(--scale-400)">
                   <H4Bold className={"text-(--color-text-neutral-primary)"}>
                     {t("localisationProjet")}
                   </H4Bold>
                   <img src="/icons/information.svg" alt="" />
                 </div>
               </AccordionTrigger>
-              <AccordionContent className={"mt-(--space-800)"}>
-                <div className="flex flex-col p-1 w-full gap-(--space-600)">
-                  <div className="w-full flex items-center gap-(--space-700)">
+              <AccordionContent className={"mt-(--scale-800)"}>
+                <div className="flex flex-col p-1 w-full gap-(--scale-600)">
+                  <div className="w-full flex items-center gap-(--scale-700)">
                     <div className="flex gap-2.5 ">
                       <TextBody2 className="w-fit shrink-0 min-w-37.5">
                         {t("empriseGeospatiale")}
@@ -132,7 +132,7 @@ export default async function DataForm() {
                       </span>
                     </BQButton>
                   </div>
-                  <div className="w-full flex items-center gap-(--space-700)">
+                  <div className="w-full flex items-center gap-(--scale-700)">
                     <div className="flex  gap-2.5">
                       <TextBody2 className="w-fit shrink-0 min-w-37.5">
                         {t("aireInfluence")}
@@ -140,7 +140,7 @@ export default async function DataForm() {
                       <img src="/icons/information.svg" alt="" />
                     </div>
 
-                    <div className="flex min-w-175 gap-(--space-400)">
+                    <div className="flex min-w-175 gap-(--scale-400)">
                       <BQInput
                         placeholder={t("valeur")}
                         className={"flex-1 t-body-2 placeholder:t-body-2"}
@@ -157,10 +157,10 @@ export default async function DataForm() {
             </AccordionItem>
             <AccordionItem
               value="activitesIndustrielles"
-              className={"border-b-0 border-t mb-(--space-800)"}
+              className={"border-b-0 border-t mb-(--scale-800)"}
             >
               <AccordionTrigger>
-                <div className="flex justify-center items-center gap-(--space-400) p-(--space-400)">
+                <div className="flex justify-center items-center gap-(--scale-400) p-(--scale-400)">
                   <H4Bold className={"text-(--color-text-neutral-primary)"}>
                     {t("activitesIndustrielles")}
                   </H4Bold>
@@ -168,9 +168,9 @@ export default async function DataForm() {
                 </div>
               </AccordionTrigger>
               <AccordionContent
-                className={"flex flex-col mt-(--space-800) gap-(--space-800)"}
+                className={"flex flex-col mt-(--scale-800) gap-(--scale-800)"}
               >
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-palettes" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -179,7 +179,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) pb-(--scale-400)">
                   <Switch id="switch-sols-organiques" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -188,14 +188,14 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
-                  <div className="flex gap-(--space-500) ">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
+                  <div className="flex gap-(--scale-500) ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
                       {t("solsOrganiques")}
                     </TextBody2>
                     <RadioGroup
                       defaultValue="comfortable"
-                      className="flex flex-row gap-(--space-600)"
+                      className="flex flex-row gap-(--scale-600)"
                       orientation="horizontal"
                     >
                       <div className="flex items-center gap-3">
@@ -217,7 +217,7 @@ export default async function DataForm() {
                     </RadioGroup>
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-plans-eau" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -226,7 +226,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-canalisation" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -235,7 +235,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-milieux-aquatiques" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -244,7 +244,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-sols-interregional" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -253,7 +253,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-especes-non-indigenes" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -262,7 +262,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) border-b pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) border-b pb-(--scale-400)">
                   <Switch id="switch-produits-ligneux" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -271,7 +271,7 @@ export default async function DataForm() {
                     <img src="/icons/information.svg" alt="" />
                   </div>
                 </div>
-                <div className="w-full flex items-center gap-(--space-700) pb-(--space-400)">
+                <div className="w-full flex items-center gap-(--scale-700) pb-(--scale-400)">
                   <Switch id="switch-transport-maritime" />
                   <div className="flex gap-2.5 ">
                     <TextBody2 className="w-fit shrink-0 min-w-37.5">
@@ -284,23 +284,23 @@ export default async function DataForm() {
             </AccordionItem>
             <AccordionItem
               value="emissionsPolluantes"
-              className={"border-b-0 border-t mb-(--space-800)"}
+              className={"border-b-0 border-t mb-(--scale-800)"}
             >
               <AccordionTrigger>
-                <div className="flex justify-center items-center gap-(--space-400) p-(--space-400)">
+                <div className="flex justify-center items-center gap-(--scale-400) p-(--scale-400)">
                   <H4Bold className={"text-(--color-text-neutral-primary)"}>
                     {t("emissionsPolluantes")}
                   </H4Bold>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className={"mt-(--space-800) flex"}>
+              <AccordionContent className={"mt-(--scale-800) flex"}>
                 <EmissionTable />
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
       </BQCard>
-      <div className="flex w-full justify-end items-start gap-2.5 pb-(--space-700)">
+      <div className="flex w-full justify-end items-start gap-2.5 pb-(--scale-700)">
         <BQButton
           type="good"
           variant={"primary"}

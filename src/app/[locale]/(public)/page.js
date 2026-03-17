@@ -22,18 +22,18 @@ export default async function Home() {
           {t("subtitle")}
         </H4Regular>
       </div>
-      <div className="flex flex-col  w-full h-148 px-22.5 gap-(--space-1100)">
-        <div className="flex  w-full t-h5 gap-(--space-800)">
+      <div className="flex flex-col  w-full h-148 px-22.5 gap-(--scale-1100)">
+        <div className="flex  w-full t-h5 gap-(--scale-800)">
           <p className="m-0 p-0">{t("description1")}</p>
           <p className="m-0 p-0">{t("description2")}</p>
           <p className="m-0 p-0">{t("description3")}</p>
         </div>
-        <BQCard className="w-full flex items-center bg-(--color-neutral-500) gap-2.5  pb-(--space-1100) pt-(--space-1000) rounded-bq-lg">
-          <form className="flex flex-col min-w-139.5 gap-(--space-600)">
+        <BQCard className="w-full flex items-center bg-(--color-neutral-500) gap-2.5  pb-(--scale-1100) pt-(--scale-1000) rounded-bq-lg">
+          <form className="flex flex-col min-w-139.5 gap-(--scale-600)">
             <H4Regular className={"text-(--color-text-neutral-active)"}>
               {t("loginTitle")}
             </H4Regular>
-            <div className="flex flex-col w-full gap-(--space-300) t-body-2">
+            <div className="flex flex-col w-full gap-(--scale-300) t-body-2">
               <BQInput placeholder={t("usernamePlaceholder")} />
               <BQInput placeholder={t("passwordPlaceholder")} />
             </div>
@@ -61,7 +61,7 @@ export default async function Home() {
         <div className="absolute top-0 left-0 h-117.5 w-full bg-linear-to-b from-transparent to-(--color-neutral-500)" />
 
         <div className="flex flex-col gap-[99px]  items-center">
-          <div className="flex justify-center items-center gap-(--space-500)">
+          <div className="flex justify-center items-center gap-(--scale-500)">
             <BQCard
               className={
                 "bg-(--color-surface-good-primary) text-(--color-text-neutral-active) flex flex-row  relative py-(space-600) border-0"
@@ -114,7 +114,7 @@ export default async function Home() {
             </BQCard>
           </div>
           <div className="flex justify-between items-start text-black w-[1078px] h-[316.05] ">
-            <div className="flex flex-col gap-(--space-1000) justify-center items-center">
+            <div className="flex flex-col gap-(--scale-1000) justify-center items-center">
               <div className="w-[171.64px] h-[164.05px] ">
                 <ShapeFlower color="#FFAA50" />
               </div>
@@ -123,7 +123,7 @@ export default async function Home() {
                 tribunos
               </H4Bold>
             </div>
-            <div className="flex flex-col gap-(--space-1000) justify-center items-center">
+            <div className="flex flex-col gap-(--scale-1000) justify-center items-center">
               <div className="w-[171.64px] h-[164.05px] ">
                 <ShapeDuck color="#638FFF" />
               </div>
@@ -131,7 +131,7 @@ export default async function Home() {
                 Ultima Syriarum est Palaestina per intervalla magna protenta
               </H4Bold>
             </div>
-            <div className="flex flex-col gap-(--space-1000) justify-center items-center">
+            <div className="flex flex-col gap-(--scale-1000) justify-center items-center">
               <div className="w-[171.64px] h-[164.05px]  rotate-270 translate-1">
                 <ShapeLeaf />
               </div>
