@@ -74,7 +74,7 @@ export const BQTable = ({
       <TableHeader className="[&_tr]:border-0 ">
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow
-            className={"border-0 mb-(--space-800)"}
+            className={"border-0 mb-(--scale-800)"}
             key={headerGroup.id}
           >
             {headerGroup.headers.map((header) => (
@@ -101,7 +101,7 @@ export const BQTable = ({
       <TableBody>
         <tr aria-hidden>
           <td
-            className="h-(--space-800)"
+            className="h-(--scale-800)"
             colSpan={table.getAllColumns().length}
           />
         </tr>

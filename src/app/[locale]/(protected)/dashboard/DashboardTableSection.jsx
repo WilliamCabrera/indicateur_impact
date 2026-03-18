@@ -250,7 +250,7 @@ export const ProjectTable = ({ title, columns, data }) => {
       </div>
 
       {/* Lignes dans une card */}
-      <div className="rounded-bq-md bg-(--color-surface-base-secondary) opacity-100 shadow-sm border border-(--color-border-neutral-secondary) overflow-hidden p-(--space-500)">
+      <div className="rounded-bq-md bg-(--color-surface-base-secondary) opacity-100 shadow-sm border border-(--color-border-neutral-secondary) overflow-hidden p-(--scale-500)">
         {table.getRowModel().rows.map((row) => (
           <div
             key={row.id}

@@ -85,7 +85,7 @@ export const BQSimpleSelect = ({
         disabled={disabled}
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          "w-full flex items-center justify-between bg-(--color-surface-neutral-secondary) border border-(--color-border-neutral-secondary) rounded-bq-sm pt-(--space-150) pb-(--p-xm) pl-(--space-500) pr-(--space-500) t-body-2 outline-none cursor-pointer",
+          "w-full flex items-center justify-between bg-(--color-surface-neutral-secondary) border border-(--color-border-neutral-secondary) rounded-bq-sm pt-(--scale-150) pb-(--p-xm) pl-(--scale-500) pr-(--scale-500) t-body-2 outline-none cursor-pointer",
           selected
             ? "text-(--color-text-neutral-primary)"
             : "text-(--color-text-disabled)",
@@ -115,7 +115,7 @@ export const BQSimpleSelect = ({
                       type="button"
                       onClick={() => handleSelect(item.value)}
                       className={cn(
-                        "w-full text-left px-(--space-500) py-(--space-200) t-body-2 rounded-bq-sm cursor-pointer hover:bg-(--color-surface-neutral-secondary) transition-colors text-(--color-text-neutral-primary)",
+                        "w-full text-left px-(--scale-500) py-(--scale-200) t-body-2 rounded-bq-sm cursor-pointer hover:bg-(--color-surface-neutral-secondary) transition-colors text-(--color-text-neutral-primary)",
                         item.value === value && "font-medium"
                       )}
                     >

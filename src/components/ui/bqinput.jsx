@@ -8,8 +8,8 @@ export const BQInput = ({ className, ...props }) => {
     <Input
       {...props}
       className={cn(
-        "bg-(--color-surface-neutral-secondary) border-none rounded-bq-sm pt-(--space-150)",
-        "pb - (--p - xm) px - (--space - 500) placeholder:text-(--color-text-disabled)",
+        "bg-(--color-surface-neutral-secondary) border-none rounded-bq-sm pt-(--scale-150)",
+        "pb-(--p-xm) px-(--scale-500) placeholder:text-(--color-text-disabled)",
         className
       )}
     />

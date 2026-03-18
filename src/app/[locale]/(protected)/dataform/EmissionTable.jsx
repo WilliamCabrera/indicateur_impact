@@ -98,8 +98,8 @@ function CellNumberInput({ value, onChange, muted = false }) {
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className={cn(
-        "t-body-3 text-(--color-text-neutral-primary)  border-solid border border-(--color-border-neutral-primary) bg-(--color-surface-neutral-secondary) border-none rounded-bq-sm pt-(--space-150)",
-        "pb - (--p - xm) px - (--space - 500) placeholder:text-(--color-text-disabled)"
+        "t-body-3 text-(--color-text-neutral-primary)  border-solid border border-(--color-border-neutral-primary) bg-(--color-surface-neutral-secondary) border-none rounded-bq-sm pt-(--scale-150)",
+        "pb - (--p - xm) px - (--scale - 500) placeholder:text-(--color-text-disabled)"
       )}
     />
   );
@@ -134,7 +134,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         id: "cas",
         size: 180,
         header: () => (
-          <div className="flex flex-col  gap-(--space-200) ">
+          <div className="flex flex-col  gap-(--scale-200) ">
             <div className="flex items-center gap-2">
               <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
                 {t("numeroCas")}
@@ -163,7 +163,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         id: "nom",
         size: 540,
         header: () => (
-          <div className="flex flex-col  gap-(--space-200) ">
+          <div className="flex flex-col  gap-(--scale-200) ">
             <div className="flex items-center gap-2 ">
               <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
                 {t("nomSubstance")}
@@ -193,7 +193,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         size: 160,
         header: () => {
           return (
-            <div className="flex flex-col  gap-(--space-200) w-full ">
+            <div className="flex flex-col  gap-(--scale-200) w-full ">
               <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
                 {t("quantite")}
               </TextBody2>
@@ -209,7 +209,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         cell: ({ row }) => {
           {
             return (
-              <div className="rounded-(--space-200) p-(--space-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
+              <div className="rounded-(--scale-200) p-(--scale-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
                 <p className="t-body-3">{row.getValue("quantite")}</p>
               </div>
             );
@@ -222,7 +222,7 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         size: 250,
         header: () => {
           return (
-            <div className="flex flex-col  gap-(--space-200)">
+            <div className="flex flex-col  gap-(--scale-200)">
               <div className="flex items-center gap-2 ">
                 <TextBody2 className="text-(--color-text-neutral-primary) truncate block">
                   {t("unitesRejet")}
@@ -252,13 +252,13 @@ export const EmissionTable = ({ data = INITIAL_ROWS }) => {
         cell: ({ row }) => {
           return (
             <div className="flex items-center gap-2.5 w-full ">
-              <div className="min-w-42.5 rounded-(--space-200) p-(--space-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
+              <div className="min-w-42.5 rounded-(--scale-200) p-(--scale-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
                 <p className="t-body-3">unités</p>
               </div>
               <TextBody3 className="text-(--color-text-neutral-secondary)">
                 {t("par")}
               </TextBody3>
-              <div className="min-w-42.5 rounded-(--space-200) p-(--space-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
+              <div className="min-w-42.5 rounded-(--scale-200) p-(--scale-200) flex justify-center text-(--color-text-neutral-primary) bg-transparent border-solid border border-(--color-border-neutral-primary)">
                 <p className="t-body-3">unités</p>
               </div>
             </div>

@@ -9,10 +9,10 @@ export default async function Connexion() {
 
   return (
     <div className="flex flex-col items-center  justify-start w-full min-h-[70vh] bg-(--color-surface-base-primary)">
-      <div className="w-full  p-(--space-800) pt-(--space-200)">
+      <div className="w-full  p-(--scale-800) pt-(--scale-200)">
         <img src="/logo/logo_vertical.svg" />
       </div>
-      <div className="w-full flex-1 relative pt-(--space-800) px-(--space-500)">
+      <div className="w-full flex-1 relative pt-(--scale-800) px-(--scale-500)">
         <img
           src="/images/homepage-bg-img.jpg"
           alt="Placeholder"
@@ -20,7 +20,7 @@ export default async function Connexion() {
         />
         <BQCard
           className={
-            "relative z-10 w-114.75 h-90 rounded-(--space-500) bg-(--color-surface-base-primary) p-(--space-500) gap-(--space-500)"
+            "relative z-10 w-114.75 h-90 rounded-(--scale-500) bg-(--color-surface-base-primary) p-(--scale-500) gap-(--scale-500)"
           }
         >
           <H4Bold
@@ -30,7 +30,7 @@ export default async function Connexion() {
           >
             {t("createAccount")}
           </H4Bold>
-          <form className="flex flex-col gap-(--space-300) t-body-2">
+          <form className="flex flex-col gap-(--scale-300) t-body-2">
             <BQInput placeholder={t("usernamePlaceholder")} />
             <BQInput placeholder={t("organisationPlaceholder")} />
             <BQInput placeholder={t("emailPlaceholder")} />
