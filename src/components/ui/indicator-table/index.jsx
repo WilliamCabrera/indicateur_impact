@@ -4,12 +4,12 @@ import { TextBody2Bold, TextBody4 } from "../typography";
 import { IndicatorResultTableItem } from "./IndicatorResultTabletem";
 import { cn } from "@/lib/utils";
 
-const indicators = [
+export const INDICATORS = [
   {
     index: 1,
     title: "Impact sur les services écosystémiques",
     score: 0.75,
-    active: false,
+    active: true,
   },
   {
     index: 2,
@@ -45,14 +45,14 @@ export const IndicatorTable = () => {
           "flex w-full justify-center items-center uppercase rounded-t-(--scale-500) bg-(--color-surface-neutral-active)  py-2.5",
           active
             ? " bg-(--color-surface-neutral-active) text-(--color-text-neutral-active)"
-            : " bg-transparent border-[2px] border-(--color-border-neutral-primary) text-(--color-text-neutral-primary)"
+            : " bg-transparent border-2 border-(--color-border-neutral-primary) text-(--color-text-neutral-primary)"
         )}
       >
         {active && <TextBody2Bold> Vue D'ensemble</TextBody2Bold>}
         {!active && <TextBody4> Vue D'ensemble</TextBody4>}
       </div>
       <div className="grid grid-cols-3 grid-rows-3 gap-y-3 gap-x-5  px-5">
-        {indicators.map((indicator) => (
+        {INDICATORS.map((indicator) => (
           <IndicatorResultTableItem key={indicator.index} {...indicator} />
         ))}
       </div>

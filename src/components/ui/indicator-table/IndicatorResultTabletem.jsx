@@ -1,5 +1,5 @@
 import React from "react";
-import { H4Bold, TextBody2Bold, TextBody3, TextBody4 } from "../typography";
+import { TextBody4 } from "../typography";
 import { cn } from "@/lib/utils";
 
 export const IndicatorResultTableItem = ({
@@ -11,54 +11,47 @@ export const IndicatorResultTableItem = ({
   return (
     <div
       className={cn(
-        "flex flex-col w-full py-1.25",
+        "group flex flex-col w-full py-1.5 hover:bg-(--color-neutral-50)  rounded-[8px]",
         active
-          ? "px-2.5 py-(--scale-150) rounded-[8px] bg-(--color-surface-neutral-active)"
+          ? "px-2.5  bg-(--color-surface-neutral-active) hover:bg-(--color-surface-neutral-active)"
           : ""
       )}
     >
       <div
         className={cn(
-          "flex w-full text-(--color-text-neutral-primary) items-center",
+          "flex w-full text-(--color-text-neutral-primary) items-center h-full border-b-[2px] border-(--color-border-neutral-primary) group-hover:border-b-transparent",
           active
-            ? "text-(--color-text-neutral-active)"
+            ? "text-(--color-text-neutral-active) group-hover:text-(--color-text-neutral-active) border-b-transparent"
             : "text-(--color-text-neutral-primary)"
         )}
       >
         <div className="flex flex-1 items-center gap-2 pl-2">
-          {active ? (
-            <H4Bold>{index}</H4Bold>
-          ) : (
-            <TextBody2Bold>{index}</TextBody2Bold>
-          )}
+          <p
+            className={cn(
+              "font-nomral",
+              active
+                ? "t-h4 font-bold py-0"
+                : "t-body-2 font-bold group-hover:t-h4 group-hover:font-bold  group-hover:py-0"
+            )}
+          >
+            {index}
+          </p>
           <TextBody4>{title}</TextBody4>
         </div>
-        <div
+        <p
           className={cn(
-            "rounded-t-(--scale-100) py-(--scale-100) px-(--scale-200) ",
-            active ? "bg-transparent" : "bg-(--color-neutral-50)"
+            "rounded-t-(--scale-100) py-(--scale-100) px-(--scale-200)   group-hover:border-transparent group-hover:py-0 ",
+            active
+              ? "bg-transparent py-0 t-h4 font-bold"
+              : "bg-(--color-neutral-50) group-hover:py-0 t-body-3 group-hover:t-h4 group-hover:font-bold"
           )}
         >
-          {active ? (
-            <H4Bold>
-              {score.toLocaleString("fr-FR", {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
-            </H4Bold>
-          ) : (
-            <TextBody3>
-              {score.toLocaleString("fr-FR", {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
-            </TextBody3>
-          )}
-        </div>
+          {score.toLocaleString("fr-FR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}
+        </p>
       </div>
-      {!active && (
-        <div className="h-0 w-full border-b-[2px] border-(--color-border-neutral-primary)" />
-      )}
     </div>
   );
 };

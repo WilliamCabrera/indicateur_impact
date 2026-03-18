@@ -8,13 +8,13 @@ export const ResultMap = () => {
       <div className="flex flex-col gap-(--scale-500)  flex-1">
         <div className="flex items-center justify-between">
           <H4Bold>Carte</H4Bold>
-          <div className="flex text text-(--color-text-neutral-primary) gap-(--scale-500) ">
-            <div className="flex gap-(--scale-200)">
+          <div className=" flex text text-(--color-text-neutral-primary) gap-(--scale-500) ">
+            <div className="flex gap-(--scale-200) ">
               <img
                 src="/icons/geospatial-footprint.svg"
                 alt="legend geospatial solide line polygon"
               />
-              <div className="flex border-b-[1px] border-(--color-border-neutral-primary)">
+              <div className="flex border-b-[1px] border-(--color-border-neutral-primary) hover:border-b-[2px]">
                 <TextBody2>Emprise géospatiale</TextBody2>
               </div>
             </div>
@@ -23,7 +23,7 @@ export const ResultMap = () => {
                 src="/icons/area.svg"
                 alt="legend geospatial dashed line polygon"
               />
-              <div className="flex border-b-[1px] border-(--color-border-neutral-primary)">
+              <div className="flex border-b-[1px]  border-(--color-border-neutral-primary) hover:border-b-[2px]">
                 <TextBody2>Aire d’influence</TextBody2>
               </div>
             </div>
