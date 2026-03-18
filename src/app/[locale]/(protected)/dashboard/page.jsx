@@ -22,7 +22,7 @@ export default async function Dashboard() {
       <div className="flex flex-col gap-(--scale-300) z-10">
         <H4Bold> Bonjour Julianne</H4Bold>
         <BQButton type="good" variant={"primary"} className="w-full t-h4">
-          {"Créer un nouveau projet"}
+          <p className="t-h4">{"Créer un nouveau projet"}</p>
         </BQButton>
       </div>
       <div className="flex flex-col z-10 gap-(--scale-700) flex-1 max-w-230">
