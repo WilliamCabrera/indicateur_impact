@@ -37,7 +37,7 @@ export default async function Connexion() {
             <BQInput placeholder={t("passwordPlaceholder")} />
             <BQInput placeholder={t("privacyPlaceholder")} />
             <BQButton type="good" variant={"primary"} className="w-full t-h4">
-              {t("createAccount")}
+              <p className="t-h4"> {t("createAccount")}</p>
             </BQButton>
           </form>
         </BQCard>

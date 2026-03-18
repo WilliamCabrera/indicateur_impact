@@ -43,11 +43,11 @@ export default async function Home() {
               className="w-full t-h4 text-(--color-surface-good-primary)  hover:text-(--color-border-good-primary-hover)"
               outlined
             >
-              {t("signIn")}
+              <p className="t-h4"> {t("signIn")}</p>
             </BQButton>
 
             <BQButton type="good" variant={"primary"} className="w-full t-h4">
-              {t("createAccount")}
+              <p className="t-h4">{t("createAccount")}</p>
             </BQButton>
           </form>
         </BQCard>

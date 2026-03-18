@@ -307,10 +307,10 @@ export default async function DataForm() {
           className=" t-h4 text-(--color-surface-good-primary) hover:text-(--color-border-good-primary-hover)"
           outlined
         >
-          {t("enregistrer")}
+          <p className="t-h4"> {t("enregistrer")}</p>
         </BQButton>
         <BQButton type="good" variant={"primary"} className=" t-h4">
-          {t("enregistrerSoumettre")}
+          <p className="t-h4"> {t("enregistrerSoumettre")}</p>
         </BQButton>
       </div>
     </div>
